@@ -1,0 +1,107 @@
+
+.wrapper {
+	font-family: Arial, sans-serif;	
+}
+
+/**************  NAV BAR STYLES  *****************/
+
+#navBar {
+	background-color: #FFB4B0;
+	min-width: 702px;
+	margin: 2% 1% 2% 1%;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+#navList {
+	list-style-type: none;
+}
+
+#navList li{
+	display: inline-block;
+}
+
+.middleNav {
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	margin: 0 10px;
+	padding: 0 10px;
+}
+
+
+/**************  MUSIC CHOOSER STYLES  *****************/
+
+.flexcontainer {
+	display: flex;
+}
+
+/**************  SIDE MENU STYLES  *****************/
+
+#sideMenu {
+	background-color: #4DD7FA;
+	width: 20%;
+	min-width: 165px;
+	padding: 20px 20px 20px 20px;
+	margin: 0 1% 0 1%;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+#sideMenu form select {
+	width: 165px;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+#genreCheck {
+	list-style: none;
+	padding-left: 0;
+}
+
+#genreCheck li {
+	display: inline-block;
+	min-width: 60px;
+	margin-right: 5px;
+}
+
+#filterButton {
+	border: 2px solid black;
+	border-radius: 5px;
+	width: 165px;
+	height: 25px;
+}
+
+#lengthSlider {
+	width: 165px;
+}
+/**************  SONG BLOCK STYLES  *****************/
+
+#songBlock {
+	background-color: #FEFAC0;
+	width: 80%;
+	min-width: 400px;
+	padding: 20px 40px 20px 40px;
+	margin: 0 1% 0 1%;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+.songName {
+	color: #785616;
+	font-size: 2em;
+}
+.songInfo {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.songInfo li {
+	display: inline-block;
+}
+
+.middleSongInfo {
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	margin: 0 10px;
+	padding: 0 10px;
+}
