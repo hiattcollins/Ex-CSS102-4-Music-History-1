@@ -1,15 +1,126 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Music History</title>
-</head>
+	<head>
+	  <meta charset="utf-8">
+	  <title>Music History</title>
+	  <link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
 
-<body>
+	<body>
+		<div class="wrapper">
+			<div id="navBar">
+				<nav>
+					<ul id="navList">
+						<li><a href="#">View Music</a></li>
+						<li class="middleNav"><a href="#">Add Music</a></li>
+						<li><a href="#">Profile<a/></li>
+					</ul>
+				</nav>
+			</div>
 
+			<div class="flexcontainer">
+				<div id="sideMenu">
+					<form>
 
-</body>
+						<label>Song Length:</label>
+						<input id="lengthSlider" type="range" min="0" max="12">
+						<br>
+						<br>
+
+						<label for="artist">Artist:</label><br>
+						<select name="artist">
+							<option value="lafemme">La Femme</option>
+							<option value="idlebloom">Idle Bloom</option>
+							<option value="hormonar">Hórmónar</option>
+							<option value="dbfc">DBFC</option>
+							<option value="thewhitestripes">The White Stripes</option>
+						</select>
+						<br>
+						<br>
+
+						<label for="album">Album:</label><br>
+						<select name="album">
+							<option value="psychotropicalberlin">Psycho Tropical Berlin</option>
+							<option value="littledeaths">Little Deaths</option>
+							<option value="hormonarep">Hórmónar EP</option>
+							<option value="jenks">Jenks</option>
+							<option value="elephant">Elephant</option>
+						</select><br>
+						<br>
+
+						<form>
+							<label>Genre:</label><br>
+							<ul id="genreCheck">
+								<li><input type="checkbox" name="genre1" value="rock">Rock</li>
+								<li><input type="checkbox" name="genre2" value="electronic">Electronic</li>
+								<li><input type="checkbox" name="genre3" value="pop">Pop</li>
+								<li><input type="checkbox" name="genre4" value="hip-hop">Hip-Hop</li>
+								<li><input type="checkbox" name="genre5" value="blues">Blues</li>
+								<li><input type="checkbox" name="genre6" value="jazz">Jazz</li>
+							</ul>
+						</form><br>
+						<br>
+
+						<button id="filterButton">Filter</button>
+
+					</form>
+				</div>
+
+				<div id="songBlock">
+					<!-- Song 1 -->
+					<div>
+						<span class="songName">Antitaxi</span>
+						<ul class="songInfo">
+							<li>La Femme</li>							<!-- Artist Name -->
+							<li class="middleSongInfo">Psycho Tropical Berlin</li>	<!-- Album Name -->
+							<li>Electronic</li>							<!-- Genre -->
+						</ul>
+					</div>
+					<!-- Song 2 -->
+					<div>
+						<span class="songName">Dust</span>
+						<ul class="songInfo">
+							<li>Idle Bloom</li>
+							<li class="middleSongInfo">Little Deaths</li>
+							<li>Rock</li>
+						</ul>
+					</div>
+					<!-- Song 3 -->
+					<div>
+						<span class="songName">Kynsvelt</span>
+						<ul class="songInfo">
+							<li>Hórmónar</li>
+							<li class="middleSongInfo">Hórmónar EP</li>
+							<li>Rock</li>
+						</ul>
+					</div>
+					<!-- Song 4 -->
+					<div>
+						<span class="songName">Autonomic</span>
+						<ul class="songInfo">
+							<li>DBFC</li>
+							<li class="middleSongInfo">Jenks</li>
+							<li>Electronic</li>
+						</ul>
+					</div>
+					<!-- Song 5 -->
+					<div>
+						<span class="songName">Ball and Biscuit</span>
+						<ul class="songInfo">
+							<li>The White Stripes</li>
+							<li class="middleSongInfo">Elephant</li>
+							<li>Rock</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>	
+				
+		</div>
+
+	</body>
+
 </html>
 
 
@@ -23,3 +134,4 @@ Pick your four favorite songs from the artists you have chosen and use the infor
 Completing
 
 Once you are done, make sure you add your files to git, make a commit, and then push your new code up to Github with the following command git push origin master. -->
+
