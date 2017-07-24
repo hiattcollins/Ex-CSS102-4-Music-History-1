@@ -28,6 +28,16 @@
 	padding: 0 10px;
 }
 
+/**************  SINGLE-PAGE DISPLAY STYLES  *****************/
+
+.visible {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
 
 /**************  MUSIC CHOOSER STYLES  *****************/
 
@@ -104,4 +114,36 @@
 	border-right: 2px solid black;
 	margin: 0 10px;
 	padding: 0 10px;
+}
+
+
+/**************  ADD MUSIC VIEW STYLES  *****************/
+
+#addMusic {
+	margin: 40px auto;
+}
+
+#musicAddInputs {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+#musicAddInputs li {
+	margin: 10px 0;
+}
+
+#musicAddInputs li label {
+	display: inline-block;
+	width: 100px;
+}
+
+#musicAddInputs li input {
+	border: 2px solid black;
+}
+
+#addMusic button {
+	width: 165px;
+	margin-left: 106px;
+	border: 2px solid black;
+	border-radius: 5px;
 }

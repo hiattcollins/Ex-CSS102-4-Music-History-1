@@ -12,15 +12,15 @@
 			<div id="navBar">
 				<nav>
 					<ul id="navList">
-						<li><a href="#">View Music</a></li>
-						<li class="middleNav"><a href="#">Add Music</a></li>
-						<li><a href="#">Profile<a/></li>
+						<li><a id="linkViewMusic" href="#">View Music</a></li>
+						<li class="middleNav"><a id="linkAddMusic" href="#">Add Music</a></li>
+						<li><a id="linkProfile" href="#">Profile<a/></li>
 					</ul>
 				</nav>
 			</div>
 
 			<div class="flexcontainer">
-				<div id="sideMenu">
+				<div id="sideMenu" class="visible">
 					<form>
 
 						<label>Song Length:</label>
@@ -65,67 +65,34 @@
 						<button id="filterButton">Filter</button>
 
 					</form>
-				</div>
+				</div> 		<!-- End of Side Menu Div -->
 
-				<div id="songBlock">
-					
+				<div id="songBlock" class="visible">					
+				</div>		<!-- End of Song Block Div -->
 
-					
+				<div id="addMusic" class="hidden">
 
-					<!-- Song 1
-					<div>
-						<span class="songName">Antitaxi</span>
-						<ul class="songInfo">
-							<li>La Femme</li>							
-							<li class="middleSongInfo">Psycho Tropical Berlin</li>
-							<li>Electronic</li>							
-						</ul>
-					</div>
-					Song 2
-					<div>
-						<span class="songName">Dust</span>
-						<ul class="songInfo">
-							<li>Idle Bloom</li>
-							<li class="middleSongInfo">Little Deaths</li>
-							<li>Rock</li>
-						</ul>
-					</div>
-					Song 3
-					<div>
-						<span class="songName">Kynsvelt</span>
-						<ul class="songInfo">
-							<li>Hórmónar</li>
-							<li class="middleSongInfo">Hórmónar EP</li>
-							<li>Rock</li>
-						</ul>
-					</div>
-					Song 4
-					<div>
-						<span class="songName">Autonomic</span>
-						<ul class="songInfo">
-							<li>DBFC</li>
-							<li class="middleSongInfo">Jenks</li>
-							<li>Electronic</li>
-						</ul>
-					</div>
-					Song 5
-					<div>
-						<span class="songName">Ball and Biscuit</span>
-						<ul class="songInfo">
-							<li>The White Stripes</li>
-							<li class="middleSongInfo">Elephant</li>
-							<li>Rock</li>
-						</ul>
-					</div>
-					-->
+					<ul id="musicAddInputs">
+					<li><label for="songName">Song Name:  </label>
+					<input type="text" name="songName" id="songName"></li>
 
-					
-				</div>
+					<li><label for="artist">Artist:  </label>
+					<input type="text" name="artist" id="artist"></li>
+
+					<li><label for="album">Album:  </label>
+					<input type="text" name="album" id="album"></li>
+					</ul>
+
+					<button id="addButton">Add</button>
+
+				</div>		<!-- End of Add Music Div -->
+
 			</div>	
 				
 		</div>
 
 		<script type="text/javascript" src="songs.js"></script>
+		<script type="text/javascript" src="changeview.js"></script>
 
 	</body>
 
