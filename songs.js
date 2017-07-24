@@ -1,54 +1,46 @@
-
-
 var songs = [];
 
-songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
+songs[songs.length] = {name: "Antitaxi", artist: "La Femme", album: "Psycho Tropical Berlin", genre: "Electronic"};
+songs[songs.length] = {name: "Legs", artist: "ZZTop", album: "Eliminator", genre: "Rock"};
+songs[songs.length] = {name: "The Logical Song", artist: "Supertramp", album: "Breakfast in America", genre: "Rock"};
+songs[songs.length] = {name: "Another Brick in the Wall", artist: "Pink Floyd", album: "The Wall", genre: "Rock" };
+songs[songs.length] = {name: "Welcome to the Jungle", artist: "Guns 'N' Roses", album: "Appetite for Destruction", genre: "Rock"};
+songs[songs.length] = {name: "Ironic", artist: "Alanis Morisette", album: "Jagged Little Pill", genre: "Rock"};
+songs[songs.length] = {name: "Ball and Biscuit", artist: "The White Stripes", album: "Elephant", genre: "Rock"};
+
 
 // console.log(songs);
 
-songs.unshift("Antitaxi > by La Femme on the @album Psycho Tropical Berlin");
+let addMusicButton = document.getElementById("addButton");
+addMusicButton.addEventListener("click", addSongToList);
 
-songs.push("Ball and Biscuit > by The White Stripe*s on the album Elephant");
+function addSongToList() {
+	songs[songs.length] = {name: document.getElementById("songName").value,
+						  artist: document.getElementById("artist").value,
+						  album: document.getElementById("album").value,
+						  genre: "None"};
+	// console.log(songs);
 
-var charsToRemove = [/\*/g, /@/g, /\(/g, /\!/g];
+	document.getElementById("songName").value = "";
+	document.getElementById("artist").value = "";
+	document.getElementById("album").value = "";
+} 
 
-// console.log(songs);
+function printSongs() {
 
-for (var i = 0; i < charsToRemove.length; i++) {
-	charCut = charsToRemove[i];
+	document.getElementById("songBlock").innerHTML = ``;
 
-	for (var j = 0; j < songs.length; j++) {
-		songs[j] = songs[j].replace(charCut, "");
-		songs[j] = songs[j].replace(">", "-");	
-	}
+	songs.forEach((item) => {
+		document.getElementById("songBlock").innerHTML += `<div>
+																<span class="songName">${item.name}</span>
+																<ul class="songInfo">
+																	<li>${item.artist}</li>
+																	<li class="middleSongInfo">${item.album}</li>
+																	<li>${item.genre}</li>
+																</ul>
+															</div>`;
+	});
 }
 
-for (var k = 0; k < songs.length; k++) {
-	document.getElementById("songBlock").innerHTML += `<p>${songs[k]}</p>`;
-}
+printSongs();
 
-// console.log(songs);
-
-
-
-// Requirements
-
-// Use JavaScript arrays, loops, and innerHTML to show the music you love.
-
-// Use JavaScript to create a list of songs in the index.html file for your Music History project. Download the songs.js file, which contains an array of strings with song information.
-
-// Add one song to the beginning and the end of the array.
-// Loop over the array, and remove any words or characters that obviously don't belong.
-// Find and replace the > character in each item with a - character.
-// Add each string to the DOM in index.html in the main content area.
-// Example output:
-
-// {Song name} by {Artist} on the album {Album}
-
-// {Song name} by {Artist} on the album {Album}
-
-// ...

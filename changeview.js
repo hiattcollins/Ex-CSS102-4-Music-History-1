@@ -16,6 +16,8 @@ linkListMusic.addEventListener("click", function() {
 
 	viewAddMusic.classList.add("hidden");
 	viewAddMusic.classList.remove("visible");
+
+	printSongs();
 });
 
 linkAddMusic.addEventListener("click", function() {
