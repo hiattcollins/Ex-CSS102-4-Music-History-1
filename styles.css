@@ -90,16 +90,38 @@
 	background-color: #FEFAC0;
 	width: 80%;
 	min-width: 400px;
-	padding: 20px 40px 20px 40px;
+	padding: 20px 20px 20px 40px;
 	margin: 0 1% 0 1%;
 	border: 2px solid black;
 	border-radius: 10px;
+}
+
+.songCard {
 }
 
 .songName {
 	color: #785616;
 	font-size: 2em;
 }
+
+.delete-btn {
+	float: right;
+	margin: 12px 0 0 0;
+	border: 2px solid black;
+	border-radius: 5px;
+	width: 82px;
+	height: 25px;
+}
+
+#more-btn {
+	border: 2px solid black;
+	border-radius: 5px;
+	width: 165px;
+	height: 25px;
+	float: left;
+	/*margin-left: 30%;*/
+}
+
 .songInfo {
 	list-style-type: none;
 	padding-left: 0;

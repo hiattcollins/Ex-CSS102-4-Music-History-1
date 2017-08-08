@@ -1,0 +1,21 @@
+[
+	{
+	"name": "Welcome to the Jungle",
+	"artist": "Guns 'N' Roses",
+	"album": "Appetite for Destruction",
+	 "genre": "Rock"
+	},
+
+	{
+	"name": "Ironic",
+	"artist": "Alanis Morisette",
+	"album": "Jagged Little Pill", 
+	"genre": "Rock"
+	},
+
+	{"name": "Ball and Biscuit",
+	"artist": "The White Stripes",
+	"album": "Elephant",
+	"genre": "Rock"
+	}
+]
