@@ -8,28 +8,23 @@ let moreStatus = false;
 let addMusicButton = document.getElementById("addButton");
 addMusicButton.addEventListener("click", addSongToList);
 
-function addSongToList() {
-	console.log("songArray at beginning of addSongToList", songArray);
 
+// ****** ADD SONG TO ARRAY VIA ADD SONG PAGE ****** //
+function addSongToList() {
 	let newSong = {name: document.getElementById("songName").value,
 						  artist: document.getElementById("artist").value,
 						  album: document.getElementById("album").value,
 						  genre: "None"};
-	// console.log(songs);
-
-	console.log("newSong", newSong);
-	// songArray = songArray.push(newSong);
 
 	songArray.push(newSong);
 
 	document.getElementById("songName").value = "";
 	document.getElementById("artist").value = "";
 	document.getElementById("album").value = "";
-
-	console.log("songArray after addition:", songArray);
 } 
 
 
+// ****** EVENT LISTENER FOR BUTTON CLICKS ON SONG BLOCK ****** //
 document.getElementById("songBlock").addEventListener("click", function(event) {
 	
 	// ****** TRIGGER FOR FUNCTION TO DELETE SONG FROM ARRAY AND REPRINT DOM ****** //
@@ -45,26 +40,29 @@ document.getElementById("songBlock").addEventListener("click", function(event) {
 });
 
 
+// ****** CALLBACK FUNCTION TO RETRIEVE AND PRINT SONGS LOADED FROM JSON ****** //
 function getSongs(songs) {
 	console.log("songs at getSongs", songs);
 	songArray = songs;
 	printSongs(songArray);
 }
 
+
+// ****** FUNCTION TO RETRIEVE AND PRINT MORE SONGS LOADED FROM JSON ****** //
 function getMoreSongs(songs) {
 	console.log("songs from getMoreSongs", songs);
 	songs.forEach(function (element) {
 			songArray.push(element);
 	});
 	
-	console.log("songArray from getMoreSongs", songArray);
-
+	// ****** VARIABLE TO HOLD STATUS OF MORE BUTTON ONCE CLICKED ****** //
 	moreStatus = true;
 
 	printSongs(songArray)
 
 }
 
+// ****** FUNCTION TO DELETE SPECIFIED SONG FROM ARRAY ON CLICK OF DELETE BUTTON, AND REPRINT DOM ****** //
 function deleteSongFromArray(songToDelete) {
 	songArray = songArray.filter(function (element) {
 		return (element.name !== songToDelete)
@@ -72,7 +70,7 @@ function deleteSongFromArray(songToDelete) {
 	printSongs(songArray);
 }
 
-
+// ****** FUNCTION TO PRINT SONGS FROM ARRAY TO DOM ****** //
 function printSongs(songInput) {
 
 	document.getElementById("songBlock").innerHTML = ``;
@@ -91,26 +89,12 @@ function printSongs(songInput) {
 
 	document.getElementById("songBlock").innerHTML += `<button id="more-btn">More</button>`
 
+	// ****** DISABLE MORE BUTTON IF ALREADY CLICKED ****** //
 	if (moreStatus === true) {
 		document.getElementById("more-btn").setAttribute('disabled', true);
 	}
 }
 
+
+// ****** INITIALIZE LOADING OF SONGS FROM JSON ****** //
 loadSongs(getSongs);
-
-
-
-
-// Requirements
-
-// Part One
-
-// Read from local JSON file with an XHR.
-// Loop over results and inject into Music History list view.
-// Add delete button to each row and, when it is clicked, delete the entire row in the DOM.
-// Part Two
-
-// Take your music and split it into two JSON files instead of them all living on one file.
-// Add a button at the bottom of your music list and label it More >.
-// Load the songs from the first list, and inject the DOM into the document as you've already done.
-// When the user clicks that button, load the songs from the second JSON file and append them to the bottom of the existing music, but before the More button.
