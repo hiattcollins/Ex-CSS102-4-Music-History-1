@@ -18,6 +18,8 @@ function addSongToList() {
 
 	songArray.push(newSong);
 
+	console.log("songArray after addition of new song", songArray);
+
 	document.getElementById("songName").value = "";
 	document.getElementById("artist").value = "";
 	document.getElementById("album").value = "";
