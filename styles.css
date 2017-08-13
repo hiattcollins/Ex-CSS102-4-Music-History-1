@@ -162,12 +162,13 @@
 #musicAddInputs li input {
 	border: 2px solid black;
 }
-/*
-#musicAddGenre li select {
-	width: 100px;
+
+#musicAddInputs li select {
+	width: 166.4px;
+	height: 21.7px;
 	border: 2px solid black;
 }
-*/
+
 #addMusic button {
 	width: 165px;
 	margin-left: 106px;

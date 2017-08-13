@@ -1,52 +1,34 @@
-console.log("loadsongs.js");
+// console.log("loadsongs.js");
+
+$(document).ready(function() {
 
 // ****** SET EMPTY ARRAY TO HOLD SONGS ****** //
 let songs = [];
 
 
 // ****** FUNCTION TO LOAD SONGS FROM JSON ****** //
-function loadSongs (callBackToInvoke) {
 
-	let getSongs = new XMLHttpRequest();
+window.loadSongs = function(callBackToInvoke) { 
+  $.ajax({
+      url:"songs.json"
+    }).done(callBackToInvoke)
+      .fail(function(error) {
+        console.log("Error:", error);
+  });
 
-	getSongs.addEventListener("load", function (event) {
-      	console.log("messages loaded successfully");
-      	let songs = JSON.parse(this.responseText);
-      	console.log("songs", songs);
-        callBackToInvoke(songs);
-		return songs;
-      });
-
-    getSongs.addEventListener("error", function (event) {
-        	console.log("dataFailed", event);
-    });
-
- 	getSongs.open("GET", "songs.json");
-	getSongs.send();
-
-	return callBackToInvoke;
 }
 
 
 // ****** FUNCTION TO LOAD MORE SONGS FROM JSON ****** //
-function loadMoreSongs (callBackToInvoke) {
 
-	let getMoreSongs = new XMLHttpRequest();
+window.loadMoreSongs = function(callBackToInvoke) {
 
-	getMoreSongs.addEventListener("load", function (event) {
-      	console.log("messages loaded successfully");
-      	let moreSongs = JSON.parse(this.responseText);
-      	console.log("moreSongs", moreSongs);
-        callBackToInvoke(moreSongs);
-		return moreSongs;
-      });
-
-    getMoreSongs.addEventListener("error", function (event) {
-        	console.log("dataFailed", event);
+  $.ajax({
+       url:"moresongs.json"
+     }).done(callBackToInvoke)
+     .fail(function(error) {
+       console.log("Error:", error);
     });
-
- 	getMoreSongs.open("GET", "moresongs.json");
-	getMoreSongs.send();
-
-	return callBackToInvoke;
 }
+
+});
